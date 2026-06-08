@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Build') {
             steps {
                 echo 'Building Application'
@@ -11,6 +12,12 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing Application'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t jenkins-demo .'
             }
         }
 
