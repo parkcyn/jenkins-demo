@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t jenkins-demo .'
+                sh 'docker build -t mohammathia/jenkins-demo:latest .'
             }
         }
 
